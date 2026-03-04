@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ticketopia System</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,7 +11,7 @@
 
     <!-- LOGO -->
     <div class="logo-container">
-        <img src="logo.png" alt="Ticketopia Logo" class="logo">
+        <img src="images/logo.png" alt="Ticketopia Logo" class="logo">
     </div>
 
     <!-- MAIN MENU PANEL -->
@@ -88,5 +87,11 @@
 </div>
 
 <script src="ticketopia.js"></script>
+<script>
+function showSection(sectionId){
+    document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+    document.getElementById(sectionId).classList.add("active");
+}
+</script>
 </body>
 </html>

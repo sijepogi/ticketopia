@@ -7,16 +7,15 @@ body {
     justify-content: center;
     align-items: center;
     background: linear-gradient(rgba(102,126,234,0.7), rgba(118,75,162,0.7)),
-                url('background.jpg') no-repeat center center fixed;
+                url('images/background.jpg') no-repeat center center fixed;
     background-size: cover;
     padding: 20px 10px;
 }
 
 /* ------------------ CONTAINER ------------------ */
 .container {
-    position: relative;
     width: 90%;
-    max-width: 600px;  /* desktop-friendly */
+    max-width: 600px;
     min-height: 520px;
     padding: 30px 40px;
     border-radius: 25px;
@@ -44,8 +43,8 @@ body {
     margin-bottom: 20px; 
 }
 .logo { 
-    width: 50%;          /* scales for desktop & mobile */
-    max-width: 300px;    /* choose proper max-width */
+    width: 50%;
+    max-width: 300px;
     height: auto; 
     border-radius: 8px; 
 }
@@ -62,7 +61,7 @@ body {
 
 /* ------------------ BUTTONS ------------------ */
 button {
-    width: 90%;           /* flexible width */
+    width: 90%;
     max-width: 250px;
     padding: 12px;
     font-size: 1rem;
@@ -85,7 +84,7 @@ button:hover {
 /* ------------------ BACK BUTTON ------------------ */
 .backBtn {
     margin-top: 15px;
-    width: 60%;          /* responsive */
+    width: 60%;
     max-width: 150px;
 }
 
@@ -138,14 +137,13 @@ input, select {
 }
 .output.show { opacity: 1; }
 
-/* ------------------ BUTTON ANIMATION ------------------ */
 @keyframes buttonGradientShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* ------------------ ADMIN OUTPUT SCROLL ------------------ */
+/* ------------------ ADMIN OUTPUT ------------------ */
 #adminOutput {
     max-height: 300px;
     overflow-y: auto;
