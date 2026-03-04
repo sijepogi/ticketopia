@@ -7,7 +7,7 @@ body {
     justify-content: center;
     align-items: center;
     background: linear-gradient(rgba(102,126,234,0.7), rgba(118,75,162,0.7)),
-                url('images/background.jpg') no-repeat center center fixed;
+                url('bg.jpg') no-repeat center center fixed;
     background-size: cover;
     padding: 20px 10px;
 }
