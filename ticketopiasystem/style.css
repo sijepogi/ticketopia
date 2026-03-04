@@ -1,0 +1,144 @@
+/* Body & background */
+body {
+    font-family: 'Gill Sans', sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(102,126,234,0.7), rgba(118,75,162,0.7)),
+                url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding: 20px 0;
+}
+
+/* Container */
+.container {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    min-height: 520px;
+    padding: 30px 40px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #667eea, #764ba2, #f6d365, #fda085);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* vertical center */
+    align-items: center;      /* horizontal center */
+    box-sizing: border-box;
+}
+
+/* Gradient animation */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Logo */
+.logo-container { 
+    text-align: center; 
+    margin-bottom: 15px; 
+}
+.logo { 
+    width: 250px; /* slightly bigger than buttons */
+    height: auto; 
+    border-radius: 8px; 
+}
+
+/* Menu buttons vertical stack */
+.menu-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+/* Standard button styling */
+button {
+    width: 100%;
+    max-width: 250px;
+    padding: 12px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(135deg, #667eea, #764ba2, #f6d365, #fda085);
+    background-size: 400% 400%;
+    animation: buttonGradientShift 10s ease infinite;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Back button separate from form */
+.backBtn {
+    margin-top: 15px;
+    width: 150px;
+    background: linear-gradient(135deg, #667eea, #764ba2, #f6d365, #fda085);
+}
+
+/* Sections */
+section { display: none; width: 100%; }
+section.active { display: flex; justify-content: center; }
+
+/* Section inner wrapper */
+.section-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 350px;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+/* Form fields */
+.form-fields {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 250px;
+    gap: 15px;
+}
+
+/* Inputs & selects */
+input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+}
+
+/* Output boxes */
+.output {
+    margin-top: 10px;
+    padding: 8px;
+    background: #f3f3f3;
+    border-radius: 8px;
+    font-size: 14px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.output.show { opacity: 1; }
+
+/* Button gradient animation */
+@keyframes buttonGradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticketopia System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- LOGO -->
+    <div class="logo-container">
+        <img src="logo.png" alt="Ticketopia Logo" class="logo">
+    </div>
+
+    <!-- MAIN MENU PANEL -->
+    <section id="mainPanel" class="active big-menu">
+        <div class="menu-buttons">
+            <button onclick="showSection('registerSection')">Register</button>
+            <button onclick="showSection('loginSection')">Login</button>
+            <button onclick="showSection('adminSection')">Admin Login</button>
+        </div>
+    </section>
+
+    <!-- REGISTER SECTION -->
+    <section id="registerSection">
+        <div class="section-inner">
+            <div class="form-fields">
+                <input type="text" id="name" placeholder="Full Name">
+                <input type="number" id="age" placeholder="Age">
+                <select id="college">
+                    <option value="">Select College</option>
+                    <option>CCSICT</option>
+                    <option>CBAPA</option>
+                    <option>COE</option>
+                    <option>CAS</option>
+                    <option>CON</option>
+                    <option>IOF</option>
+                    <option>COA</option>
+                    <option>CCJE</option>
+                </select>
+                <select id="event">
+                    <option value="">Select Event</option>
+                    <option>TJ MONTERDE CONCERT</option>
+                    <option>TECH FEST 2026</option>
+                    <option>BATTLE OF THE BANDS</option>
+                    <option>INTRAMURALS OPENING</option>
+                </select>
+                <select id="seatType">
+                    <option value="500">VIP - ₱500</option>
+                    <option value="300">Regular - ₱300</option>
+                    <option value="150">Economy - ₱150</option>
+                </select>
+                <button onclick="Ticketopia.register()">Submit</button>
+                <button class="backBtn" onclick="showSection('mainPanel')">← Back</button>
+                <div id="registerOutput" class="output"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOGIN SECTION -->
+    <section id="loginSection">
+        <div class="section-inner">
+            <div class="form-fields">
+                <input type="number" id="ticketNumberInput" placeholder="Ticket Number">
+                <button onclick="Ticketopia.loginUser()">Login</button>
+                <button class="backBtn" onclick="showSection('mainPanel')">← Back</button>
+                <div id="loginOutput" class="output"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADMIN SECTION -->
+    <section id="adminSection">
+        <div class="section-inner">
+            <div class="form-fields">
+                <input type="text" id="adminUser" placeholder="Username">
+                <input type="password" id="adminPass" placeholder="Password">
+                <button onclick="Ticketopia.loginAdmin()">Login</button>
+                <button class="backBtn" onclick="showSection('mainPanel')">← Back</button>
+                <div id="adminOutput" class="output"></div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script src="ticketopia.js"></script>
+</body>
+</html> 
