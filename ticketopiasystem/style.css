@@ -45,7 +45,11 @@ body {
 }
 .logo { 
     width: 50%;          /* scales for mobile & desktop */
+<<<<<<< HEAD
     max-width: 300px;
+=======
+    max-width: 250px;
+>>>>>>> c0e3f69 (Update Ticketopia system)
     height: auto; 
     border-radius: 8px; 
 }
