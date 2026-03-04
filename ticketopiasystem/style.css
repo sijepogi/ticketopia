@@ -16,7 +16,7 @@ body {
 .container {
     position: relative;
     width: 90%;
-    max-width: 600px;  /* bigger for desktop */
+    max-width: 600px;  /* desktop-friendly */
     min-height: 520px;
     padding: 30px 40px;
     border-radius: 25px;
@@ -44,12 +44,8 @@ body {
     margin-bottom: 20px; 
 }
 .logo { 
-    width: 50%;          /* scales for mobile & desktop */
-<<<<<<< HEAD
-    max-width: 300px;
-=======
-    max-width: 250px;
->>>>>>> c0e3f69 (Update Ticketopia system)
+    width: 50%;          /* scales for desktop & mobile */
+    max-width: 300px;    /* choose proper max-width */
     height: auto; 
     border-radius: 8px; 
 }
