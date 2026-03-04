@@ -1,22 +1,22 @@
-/* Body & background */
+/* ------------------ BODY & BACKGROUND ------------------ */
 body {
     font-family: 'Gill Sans', sans-serif;
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(rgba(102,126,234,0.7), rgba(118,75,162,0.7)),
                 url('background.jpg') no-repeat center center fixed;
     background-size: cover;
-    padding: 20px 0;
+    padding: 20px 10px;
 }
 
-/* Container */
+/* ------------------ CONTAINER ------------------ */
 .container {
     position: relative;
     width: 90%;
-    max-width: 500px;
+    max-width: 600px;  /* bigger for desktop */
     min-height: 520px;
     padding: 30px 40px;
     border-radius: 25px;
@@ -26,30 +26,31 @@ body {
 
     display: flex;
     flex-direction: column;
-    justify-content: center;  /* vertical center */
-    align-items: center;      /* horizontal center */
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
 }
 
-/* Gradient animation */
+/* ------------------ GRADIENT ANIMATION ------------------ */
 @keyframes gradientShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Logo */
+/* ------------------ LOGO ------------------ */
 .logo-container { 
     text-align: center; 
-    margin-bottom: 15px; 
+    margin-bottom: 20px; 
 }
 .logo { 
-    width: 250px; /* slightly bigger than buttons */
+    width: 50%;          /* scales for mobile & desktop */
+    max-width: 250px;
     height: auto; 
     border-radius: 8px; 
 }
 
-/* Menu buttons vertical stack */
+/* ------------------ MENU BUTTONS ------------------ */
 .menu-buttons {
     display: flex;
     flex-direction: column;
@@ -59,12 +60,12 @@ body {
     margin-bottom: 25px;
 }
 
-/* Standard button styling */
+/* ------------------ BUTTONS ------------------ */
 button {
-    width: 100%;
+    width: 90%;           /* flexible width */
     max-width: 250px;
     padding: 12px;
-    font-size: 0.95rem;
+    font-size: 1rem;
     border-radius: 8px;
     border: none;
     font-weight: bold;
@@ -81,18 +82,17 @@ button:hover {
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* Back button separate from form */
+/* ------------------ BACK BUTTON ------------------ */
 .backBtn {
     margin-top: 15px;
-    width: 150px;
-    background: linear-gradient(135deg, #667eea, #764ba2, #f6d365, #fda085);
+    width: 60%;          /* responsive */
+    max-width: 150px;
 }
 
-/* Sections */
+/* ------------------ SECTIONS ------------------ */
 section { display: none; width: 100%; }
 section.active { display: flex; justify-content: center; }
 
-/* Section inner wrapper */
 .section-inner {
     display: flex;
     flex-direction: column;
@@ -104,7 +104,7 @@ section.active { display: flex; justify-content: center; }
     box-sizing: border-box;
 }
 
-/* Form fields */
+/* ------------------ FORM FIELDS ------------------ */
 .form-fields {
     display: flex;
     flex-direction: column;
@@ -114,7 +114,6 @@ section.active { display: flex; justify-content: center; }
     gap: 15px;
 }
 
-/* Inputs & selects */
 input, select {
     width: 100%;
     padding: 10px;
@@ -123,22 +122,51 @@ input, select {
     font-size: 0.95rem;
 }
 
-/* Output boxes */
+/* ------------------ OUTPUT BOXES ------------------ */
 .output {
     margin-top: 10px;
     padding: 8px;
     background: #f3f3f3;
     border-radius: 8px;
-    font-size: 14px;
-    text-align: center;
+    font-size: 0.95rem;
+    text-align: left;
+    width: 90%;
+    max-width: 300px;
+    word-wrap: break-word;
     opacity: 0;
     transition: opacity 0.5s ease;
 }
 .output.show { opacity: 1; }
 
-/* Button gradient animation */
+/* ------------------ BUTTON ANIMATION ------------------ */
 @keyframes buttonGradientShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+}
+
+/* ------------------ ADMIN OUTPUT SCROLL ------------------ */
+#adminOutput {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* ------------------ MEDIA QUERIES ------------------ */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px 15px;
+        min-height: auto;
+    }
+    .logo {
+        width: 70%;
+        max-width: none;
+    }
+    button, .backBtn {
+        width: 100%;
+        max-width: none;
+        font-size: 1rem;
+    }
+    .form-fields {
+        max-width: 100%;
+    }
 }

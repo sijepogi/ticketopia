@@ -23,13 +23,21 @@ const Ticketopia = {
         this.tickets.push(ticket);
         this.totalSales += price;
 
+        // Save to localStorage
+        localStorage.setItem("tickets", JSON.stringify(this.tickets));
+        localStorage.setItem("totalSales", this.totalSales);
+
         const output = document.getElementById("registerOutput");
-        output.innerHTML = `Ticket #: ${ticket.ticketNumber}<br>
-                            Name: ${ticket.name}<br>
-                            College: ${ticket.college}<br>
-                            Event: ${ticket.event}<br>
-                            Seat: ${ticket.seat}<br>
-                            Price: ₱${ticket.price}`;
+        output.innerHTML = `
+            <div>
+                <p><strong>Ticket #:</strong> ${ticket.ticketNumber}</p>
+                <p><strong>Name:</strong> ${ticket.name}</p>
+                <p><strong>College:</strong> ${ticket.college}</p>
+                <p><strong>Event:</strong> ${ticket.event}</p>
+                <p><strong>Seat:</strong> ${ticket.seat}</p>
+                <p><strong>Price:</strong> ₱${ticket.price}</p>
+            </div>
+        `;
         output.classList.add("show");
     },
 
@@ -39,10 +47,14 @@ const Ticketopia = {
 
         const output = document.getElementById("loginOutput");
         if(found){
-            output.innerHTML = `Welcome ${found.name}<br>
-                                College: ${found.college}<br>
-                                Event: ${found.event}<br>
-                                Seat: ${found.seat}`;
+            output.innerHTML = `
+                <div>
+                    <p><strong>Welcome:</strong> ${found.name}</p>
+                    <p><strong>College:</strong> ${found.college}</p>
+                    <p><strong>Event:</strong> ${found.event}</p>
+                    <p><strong>Seat:</strong> ${found.seat}</p>
+                </div>
+            `;
         } else {
             output.innerHTML = "Ticket not found";
         }
@@ -74,6 +86,16 @@ const Ticketopia = {
     }
 };
 
+// Load saved tickets from localStorage
+window.onload = function() {
+    let savedTickets = JSON.parse(localStorage.getItem("tickets"));
+    if(savedTickets) Ticketopia.tickets = savedTickets;
+
+    let savedSales = parseInt(localStorage.getItem("totalSales"));
+    if(savedSales) Ticketopia.totalSales = savedSales;
+};
+
+// Show sections
 function showSection(sectionId){
     document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
     document.getElementById(sectionId).classList.add("active");
